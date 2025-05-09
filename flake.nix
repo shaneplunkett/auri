@@ -43,12 +43,17 @@
               gtk3
               pkg-config
               webkitgtk_4_0
+              #dev tools
               gotools
               gopls
               gofumpt
               goimports-reviser
               golines
               golangci-lint
+              typescript-language-server
+              nodePackages.prettier
+              #Front end packages
+
             ];
           };
         }
