@@ -43,10 +43,11 @@
               gtk3
               pkg-config
               webkitgtk_4_0
-              # goimports, godoc, etc.
               gotools
-
-              # https://github.com/golangci/golangci-lint
+              gopls
+              gofumpt
+              goimports-reviser
+              golines
               golangci-lint
             ];
           };
