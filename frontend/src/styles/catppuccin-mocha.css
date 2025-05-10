@@ -1,0 +1,44 @@
+.theme-catppuccinmocha {
+  /* Core palette */
+  --background: #1e1e2e;
+  --foreground: #cdd6f4;
+  --muted: #313244;
+  --muted-foreground: #a6adc8;
+  --popover: #1e1e2e;
+  --popover-foreground: #cdd6f4;
+  --card: #1e1e2e;
+  --card-foreground: #cdd6f4;
+
+  /* Semantic accents */
+  --primary: #f5c2e7;
+  --primary-foreground: #1e1e2e;
+  --secondary: #585b70;
+  --secondary-foreground: #cdd6f4;
+  --accent: #89b4fa;
+  --accent-foreground: #1e1e2e;
+  --destructive: #f38ba8;
+  --destructive-foreground: #1e1e2e;
+
+  /* Borders & elements */
+  --border: #45475a;
+  --input: #313244;
+  --ring: #b4befe;
+
+  /* Optional extras (charts/sidebar/etc.) */
+  --chart-1: #f38ba8;
+  --chart-2: #a6e3a1;
+  --chart-3: #f9e2af;
+  --chart-4: #89b4fa;
+  --chart-5: #cba6f7;
+  --sidebar: #181825;
+  --sidebar-foreground: #cdd6f4;
+  --sidebar-primary: #89b4fa;
+  --sidebar-primary-foreground: #1e1e2e;
+  --sidebar-accent: #f5c2e7;
+  --sidebar-accent-foreground: #1e1e2e;
+  --sidebar-border: #313244;
+  --sidebar-ring: #b4befe;
+
+  /* Radius */
+  --radius: 0.5rem;
+}

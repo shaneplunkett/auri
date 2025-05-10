@@ -49,7 +49,6 @@
               gofumpt
               goimports-reviser
               golines
-              golangci-lint
               typescript-language-server
               tailwindcss-language-server
               prettierd
