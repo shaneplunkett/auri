@@ -51,9 +51,14 @@
               golines
               golangci-lint
               typescript-language-server
+              prettierd
               nodePackages.prettier
+              nodePackages.eslint_d
               #Front end packages
+              pnpm
 
+              #Other
+              wl-clipboard
             ];
           };
         }
