@@ -6,7 +6,7 @@
   outputs =
     inputs:
     let
-      goVersion = 23; # Change this to update the whole stack
+      goVersion = 23;
 
       supportedSystems = [
         "x86_64-linux"
@@ -14,11 +14,13 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
+
       forEachSupportedSystem =
         f:
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            system = system;
             pkgs = import inputs.nixpkgs {
               inherit system;
               overlays = [ inputs.self.overlays.default ];
@@ -32,18 +34,16 @@
       };
 
       devShells = forEachSupportedSystem (
-        { pkgs }:
-        {
-          default = pkgs.mkShell {
-            packages = with pkgs; [
-              # go (version is specified by overlay)
+        { system, pkgs }:
+        let
+          isLinux = pkgs.stdenv.isLinux;
+          isDarwin = pkgs.stdenv.isDarwin;
+          platformDeps =
+            with pkgs;
+            [
               go
               wails
               upx
-              gtk3
-              pkg-config
-              webkitgtk_4_0
-              #dev tools
               gotools
               gopls
               gofumpt
@@ -54,12 +54,27 @@
               prettierd
               nodePackages.prettier
               nodePackages.eslint_d
-              #Front end packages
               pnpm
-
-              #Other
-              wl-clipboard
-            ];
+            ]
+            ++ (
+              if isLinux then
+                [
+                  gtk3
+                  pkg-config
+                  webkitgtk_4_0
+                  wl-clipboard
+                ]
+              else if isDarwin then
+                [
+                  # macOS-specific
+                ]
+              else
+                [ ]
+            );
+        in
+        {
+          default = pkgs.mkShell {
+            packages = platformDeps;
           };
         }
       );
