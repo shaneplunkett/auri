@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Sidebar from "@/components/Sidebar";
 import "./globals.css";
-import { MaterialSymbolsOutlined } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Auri",

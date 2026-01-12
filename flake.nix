@@ -20,9 +20,6 @@
 
             pkgs.pnpm
 
-            pkgs.nodePackages.typescript
-            pkgs.nodePackages.typescript-language-server
-
             pkgs.python3
           ];
         };
